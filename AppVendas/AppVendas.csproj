@@ -1,0 +1,1325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2AF289B1-1D77-44CA-8176-022AFAE415D3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AppVendas</RootNamespace>
+    <AssemblyName>AppVendas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icovendas.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetRelatoriosProdutos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRelatoriosProdutos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaProdutos.Designer.cs">
+      <DependentUpon>frmConsultaProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategorias.Designer.cs">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProdutos.Designer.cs">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRelatorioProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorioProdutos.Designer.cs">
+      <DependentUpon>frmRelatorioProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVenda.Designer.cs">
+      <DependentUpon>frmVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="frmCategorias.resx">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaProdutos.resx">
+      <DependentUpon>frmConsultaProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProdutos.resx">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorioProdutos.resx">
+      <DependentUpon>frmRelatorioProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVenda.resx">
+      <DependentUpon>frmVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Relatorios\RelatorioProdutos.rdlc" />
+    <None Include="DataSetRelatoriosProdutos.xsc">
+      <DependentUpon>DataSetRelatoriosProdutos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelatoriosProdutos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelatoriosProdutos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetRelatoriosProdutos.xss">
+      <DependentUpon>DataSetRelatoriosProdutos.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\sistema.DAL.Categoria.datasource" />
+    <None Include="Properties\DataSources\sistema.DAL.ContaReceber.datasource" />
+    <None Include="Properties\DataSources\sistema.DAL.itenVenda.datasource" />
+    <None Include="Properties\DataSources\sistema.DAL.Pessoa.datasource" />
+    <None Include="Properties\DataSources\sistema.DAL.Produto.datasource" />
+    <None Include="Properties\DataSources\sistema.DAL.StatusPagamento.datasource" />
+    <None Include="Properties\DataSources\sistema.DAL.tb_usuario.datasource" />
+    <None Include="Properties\DataSources\sistema.DAL.Usuario.datasource" />
+    <None Include="Properties\DataSources\sistema.DAL.Venda.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icovendas.ico" />
+    <Content Include="images\fundo login.png" />
+    <Content Include="images\fundo sistema azul.png" />
+    <Content Include="images\fundo sistema.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="images\Icones finanças\Icones\listaCategorias.png" />
+    <None Include="images\fundo sistemaDeGrade.jpg" />
+    <Content Include="images\Icones finanças\Icones\apagar usuarios 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\apagar usuarios.bmp" />
+    <None Include="images\Icones finanças\Icones\CadastroCompras.png" />
+    <Content Include="images\Icones finanças\Icones\cad_produtos 18x18.bmp" />
+    <Content Include="images\Icones finanças\Icones\cad_produtos 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\codbarras 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\compras 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\consultas 25x25.bmp" />
+    <Content Include="images\Icones finanças\Icones\consultas 30x25.bmp" />
+    <Content Include="images\Icones finanças\Icones\consultas 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\deletar 25x20.bmp" />
+    <Content Include="images\Icones finanças\Icones\deletar 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\dev cliente 30x30.bmp" />
+    <Content Include="images\Icones finanças\Icones\dev cliente 40 x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\devolucao fornecedores 30x30.bmp" />
+    <Content Include="images\Icones finanças\Icones\devolucao fornecedores 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\editar_produtos 18x18.bmp" />
+    <Content Include="images\Icones finanças\Icones\editar_produtos 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\entrada produtos 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\etiquetas 42x42.bmp" />
+    <Content Include="images\Icones finanças\Icones\icone sair 25 x 25.bmp" />
+    <Content Include="images\Icones finanças\Icones\icone sair 25x25.bmp" />
+    <Content Include="images\Icones finanças\Icones\icone sair 40 x 40.bmp" />
+    <Content Include="images\Icones finanças\Icones\nota 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\nota aberta icone 40 x 40.bmp" />
+    <Content Include="images\Icones finanças\Icones\relatorios 20x20.bmp" />
+    <Content Include="images\Icones finanças\Icones\relatorios 40 x 40.bmp" />
+    <Content Include="images\Icones finanças\Icones\saida_produtos 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\usuarios 25x25.bmp" />
+    <Content Include="images\Icones finanças\Icones\usuarios 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\usuarios 75 x 75.bmp" />
+    <Content Include="images\Icones finanças\Icones\vendas 40x40.bmp" />
+    <Content Include="images\Icones finanças\Icones\vendas icone 25x25.bmp" />
+    <Content Include="images\icones\01 estoque.ico" />
+    <Content Include="images\icones\addressbook-add64.png" />
+    <Content Include="images\icones\addressbook-search64.png" />
+    <Content Include="images\icones\baby64.png" />
+    <Content Include="images\icones\basket.png" />
+    <Content Include="images\icones\budget64.png" />
+    <Content Include="images\icones\business-info64.png" />
+    <Content Include="images\icones\cadastro clientes 40 x 40.png" />
+    <Content Include="images\icones\cadastro produtos 40 x 40.png" />
+    <Content Include="images\icones\cadeado icone 55x45.png" />
+    <Content Include="images\icones\cadeado icone 55x55.png" />
+    <Content Include="images\icones\cadeado.png" />
+    <Content Include="images\icones\company.png" />
+    <Content Include="images\icones\configurações.png" />
+    <Content Include="images\icones\consultar contas a pagar.png" />
+    <Content Include="images\icones\Consultar contas a Receber.png" />
+    <Content Include="images\icones\consultas 40x40.png" />
+    <Content Include="images\icones\contas a pagar.png" />
+    <Content Include="images\icones\contas a receber.png" />
+    <Content Include="images\icones\couple64.png" />
+    <Content Include="images\icones\deletar 32x32.png" />
+    <Content Include="images\icones\distributor-report64.png" />
+    <Content Include="images\icones\Edit-Male-User64.png" />
+    <Content Include="images\icones\faturas 40x40.png" />
+    <Content Include="images\icones\icone login 20x20.png" />
+    <Content Include="images\icones\icone login 25x25.png" />
+    <Content Include="images\icones\icone login 40x40.png" />
+    <Content Include="images\icones\icones\about_16.bmp" />
+    <Content Include="images\icones\icones\add_16.bmp" />
+    <Content Include="images\icones\icones\close_16.bmp" />
+    <Content Include="images\icones\icones\copy_to_folder16_h.bmp" />
+    <Content Include="images\icones\icones\cross_16.bmp" />
+    <Content Include="images\icones\icones\del_16.bmp" />
+    <Content Include="images\icones\icones\exit16.bmp" />
+    <Content Include="images\icones\icones\financeiro.png" />
+    <Content Include="images\icones\icones\folder_closed16.bmp" />
+    <Content Include="images\icones\icones\Money Bag.ico" />
+    <Content Include="images\icones\icones\new_16.bmp" />
+    <Content Include="images\icones\icones\opts_16.bmp" />
+    <Content Include="images\icones\icones\print16.bmp" />
+    <Content Include="images\icones\icones\print_16.bmp" />
+    <Content Include="images\icones\icones\recycle_bin_16.bmp" />
+    <Content Include="images\icones\icones\savas_16.bmp" />
+    <Content Include="images\icones\icones\save16.bmp" />
+    <Content Include="images\icones\icones\save_16.bmp" />
+    <Content Include="images\icones\icones\search16.bmp" />
+    <Content Include="images\icones\icones\srch_16.bmp" />
+    <Content Include="images\icones\icones\stop16.bmp" />
+    <Content Include="images\icones\icones\trash_16.bmp" />
+    <Content Include="images\icones\icones\web_download16_h.bmp" />
+    <Content Include="images\icones\icones\workstation16.bmp" />
+    <Content Include="images\icones\item-configuration64.png" />
+    <Content Include="images\icones\lançamentos no caixa.png" />
+    <Content Include="images\icones\limpar 32x32.png" />
+    <Content Include="images\icones\login.jpg" />
+    <Content Include="images\icones\money 40x40.png" />
+    <Content Include="images\icones\money.png" />
+    <Content Include="images\icones\money_bag.png" />
+    <Content Include="images\icones\navegador.png" />
+    <Content Include="images\icones\new icon\16x16\add_column_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\add_column_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\add_column_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\add_row_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\add_row_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\add_row_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_center_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_center_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_center_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_justify_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_justify_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_justify_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_left_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_left_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_left_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_right_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_right_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\align_right_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\arrow_left_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\arrow_left_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\arrow_left_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\arrow_right_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\arrow_right_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\arrow_right_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\bold_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\bold_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\bold_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\bold_blue_square_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\bold_blue_square_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\bold_blue_square_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_copy_lined_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_copy_lined_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_copy_lined_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_copy_unlined_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_copy_unlined_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_copy_unlined_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_cut_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_cut_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_cut_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_paste_lined_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_paste_lined_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_paste_lined_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_paste_unlined_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_paste_unlined_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\clipboard_paste_unlined_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\compress_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\compress_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\compress_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\connect_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\connect_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\connect_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_find_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_find_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_find_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_register_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_register_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_register_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_security_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_security_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_security_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_settings_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_settings_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_settings_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_unregister_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_unregister_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\db_unregister_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\decompress_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\decompress_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\decompress_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\decrease_indent_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\decrease_indent_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\decrease_indent_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\delete_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\delete_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\delete_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\delete_column_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\delete_column_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\delete_column_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\delete_row_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\delete_row_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\delete_row_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\disconnect_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\disconnect_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\disconnect_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_close_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_close_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_close_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_new_lined_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_new_lined_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_new_lined_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_new_unlined_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_new_unlined_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_new_unlined_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_open_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_open_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_open_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_lined_round_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_lined_round_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_lined_round_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_lined_square_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_lined_square_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_lined_square_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_unlined_round_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_unlined_round_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_unlined_round_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_unlined_square_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_unlined_square_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_properties_unlined_square_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_refresh_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_refresh_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\document_refresh_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\eject_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\eject_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\eject_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\fast_forward_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\fast_forward_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\fast_forward_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\favourites_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\favourites_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\favourites_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\first_track_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\first_track_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\first_track_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\folders_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\folders_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\folders_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_closed_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_closed_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_closed_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_copy_to_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_copy_to_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_copy_to_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_move_to_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_move_to_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_move_to_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_open_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_open_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_open_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_options_round_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_options_round_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_options_round_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_options_square_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_options_square_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_options_square_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_up_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_up_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\folder_up_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\go_arrow_round_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\go_arrow_round_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\go_arrow_round_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\graphic_bar_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\graphic_bar_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\graphic_bar_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_dark_a_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_dark_a_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_dark_a_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_dark_b_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_dark_b_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_dark_b_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_light_a_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_light_a_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_light_a_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_light_b_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_light_b_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\history_light_b_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\home_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\home_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\home_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\increase_indent_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\increase_indent_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\increase_indent_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\italic_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\italic_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\italic_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\italic_blue_square_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\italic_blue_square_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\italic_blue_square_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\journal_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\journal_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\journal_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\last_track_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\last_track_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\last_track_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\line_spacing_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\line_spacing_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\line_spacing_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\link_to_invoice_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\link_to_invoice_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\link_to_invoice_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\lock_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\lock_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\lock_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_a_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_a_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_a_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_b_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_b_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_b_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_item_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_item_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_item_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_new_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_new_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\mail_new_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\order_incoming_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\order_incoming_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\order_incoming_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\pause_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\pause_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\pause_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\piggy_bank_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\piggy_bank_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\piggy_bank_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\play_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\play_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\play_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\preferences_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\preferences_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\preferences_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\print_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\print_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\print_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\print_preview_lined_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\print_preview_lined_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\print_preview_lined_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\print_preview_unlined_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\print_preview_unlined_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\print_preview_unlined_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\record_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\record_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\record_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\recycle_bin_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\recycle_bin_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\recycle_bin_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\redo_round_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\redo_round_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\redo_round_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\redo_square_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\redo_square_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\redo_square_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\rewind_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\rewind_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\rewind_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\save_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\save_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\save_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\search_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\search_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\search_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\sort_ascending_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\sort_ascending_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\sort_ascending_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\sort_descending_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\sort_descending_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\sort_descending_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\split_column_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\split_column_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\split_column_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\split_row_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\split_row_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\split_row_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\stop_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\stop_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\stop_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\stop_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\stop_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\stop_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\timer_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\timer_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\timer_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\treenode_add_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\treenode_add_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\treenode_add_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\treenode_delete_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\treenode_delete_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\treenode_delete_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\treenode_edit_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\treenode_edit_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\treenode_edit_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\tree_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\tree_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\tree_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\underline_blue_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\underline_blue_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\underline_blue_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\underline_blue_square_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\underline_blue_square_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\underline_blue_square_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\undo_round_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\undo_round_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\undo_round_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\undo_square_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\undo_square_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\undo_square_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\unlock_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\unlock_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\unlock_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\users_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\users_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\users_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\view_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\view_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\view_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\volume_slider_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\volume_slider_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\volume_slider_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\voucher_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\voucher_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\voucher_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\web_search_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\web_search_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\web_search_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\zoom_in_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\zoom_in_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\zoom_in_16_h.bmp" />
+    <Content Include="images\icones\new icon\16x16\zoom_out_16.bmp" />
+    <Content Include="images\icones\new icon\16x16\zoom_out_16_d.bmp" />
+    <Content Include="images\icones\new icon\16x16\zoom_out_16_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\add_column_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\add_column_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\add_column_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\add_row_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\add_row_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\add_row_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_center_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_center_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_center_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_justify_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_justify_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_justify_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_left_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_left_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_left_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_right_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_right_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\align_right_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\arrow_left_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\arrow_left_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\arrow_left_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\arrow_right_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\arrow_right_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\arrow_right_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\bold_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\bold_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\bold_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\bold_blue_square_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\bold_blue_square_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\bold_blue_square_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_copy_lined_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_copy_lined_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_copy_lined_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_copy_unlined_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_copy_unlined_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_copy_unlined_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_cut_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_cut_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_cut_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_paste_lined_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_paste_lined_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_paste_lined_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_paste_unlined_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_paste_unlined_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\clipboard_paste_unlined_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\compress_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\compress_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\compress_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\connect_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\connect_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\connect_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_find_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_find_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_find_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_register_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_register_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_register_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_security_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_security_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_security_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_settings_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_settings_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_settings_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_unregister_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_unregister_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\db_unregister_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\decompress_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\decompress_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\decompress_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\decrease_indent_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\decrease_indent_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\decrease_indent_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\delete_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\delete_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\delete_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\delete_column_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\delete_column_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\delete_column_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\delete_row_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\delete_row_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\delete_row_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\disconnect_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\disconnect_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\disconnect_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_close_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_close_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_close_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_new_lined_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_new_lined_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_new_lined_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_new_unlined_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_new_unlined_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_new_unlined_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_open_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_open_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_open_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_lined_round_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_lined_round_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_lined_round_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_lined_square_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_lined_square_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_lined_square_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_unlined_round_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_unlined_round_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_unlined_round_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_unlined_square_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_unlined_square_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_properties_unlined_square_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_refresh_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_refresh_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\document_refresh_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\eject_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\eject_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\eject_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\fast_forward_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\fast_forward_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\fast_forward_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\favourites_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\favourites_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\favourites_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\first_track_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\first_track_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\first_track_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\folders_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\folders_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\folders_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_closed_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_closed_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_closed_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_copy_to_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_copy_to_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_copy_to_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_move_to_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_move_to_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_move_to_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_open_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_open_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_open_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_options_round_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_options_round_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_options_round_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_options_square_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_options_square_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_options_square_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_up_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_up_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\folder_up_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\go_arrow_round_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\go_arrow_round_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\go_arrow_round_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\graphic_bar_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\graphic_bar_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\graphic_bar_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_dark_a_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_dark_a_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_dark_a_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_dark_b_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_dark_b_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_dark_b_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_light_a_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_light_a_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_light_a_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_light_b_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_light_b_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\history_light_b_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\home_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\home_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\home_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\increase_indent_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\increase_indent_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\increase_indent_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\italic_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\italic_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\italic_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\italic_blue_square_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\italic_blue_square_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\italic_blue_square_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\journal_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\journal_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\journal_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\last_track_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\last_track_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\last_track_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\line_spacing_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\line_spacing_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\line_spacing_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\link_to_invoice_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\link_to_invoice_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\link_to_invoice_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\lock_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\lock_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\lock_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_a_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_a_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_a_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_b_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_b_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_b_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_item_16.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_item_16_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_item_16_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_new_16.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_new_16_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\mail_new_16_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\order_incoming_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\order_incoming_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\order_incoming_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\pause_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\pause_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\pause_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\piggy_bank_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\piggy_bank_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\piggy_bank_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\play_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\play_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\play_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\preferences_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\preferences_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\preferences_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\print_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\print_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\print_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\print_preview_lined_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\print_preview_lined_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\print_preview_lined_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\print_preview_unlined_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\print_preview_unlined_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\print_preview_unlined_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\record_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\record_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\record_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\recycle_bin_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\recycle_bin_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\recycle_bin_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\redo_round_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\redo_round_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\redo_round_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\redo_square_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\redo_square_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\redo_square_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\rewind_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\rewind_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\rewind_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\save_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\save_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\save_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\search_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\search_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\search_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\sort_ascending_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\sort_ascending_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\sort_ascending_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\sort_descending_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\sort_descending_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\sort_descending_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\split_column_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\split_column_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\split_column_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\split_row_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\split_row_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\split_row_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\stop_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\stop_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\stop_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\stop_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\stop_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\stop_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\timer_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\timer_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\timer_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\treenode_add_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\treenode_add_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\treenode_add_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\treenode_delete_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\treenode_delete_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\treenode_delete_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\treenode_edit_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\treenode_edit_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\treenode_edit_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\tree_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\tree_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\tree_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\underline_blue_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\underline_blue_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\underline_blue_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\underline_blue_square_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\underline_blue_square_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\underline_blue_square_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\undo_round_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\undo_round_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\undo_round_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\undo_square_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\undo_square_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\undo_square_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\unlock_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\unlock_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\unlock_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\users_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\users_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\users_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\view_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\view_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\view_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\volume_slider_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\volume_slider_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\volume_slider_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\voucher_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\voucher_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\voucher_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\web_search_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\web_search_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\web_search_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\zoom_in_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\zoom_in_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\zoom_in_24_h.bmp" />
+    <Content Include="images\icones\new icon\24x24\zoom_out_24.bmp" />
+    <Content Include="images\icones\new icon\24x24\zoom_out_24_d.bmp" />
+    <Content Include="images\icones\new icon\24x24\zoom_out_24_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\add_column_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\add_column_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\add_column_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\add_row_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\add_row_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\add_row_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_center_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_center_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_center_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_justify_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_justify_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_justify_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_left_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_left_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_left_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_right_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_right_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\align_right_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\arrow_left_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\arrow_left_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\arrow_left_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\arrow_right_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\arrow_right_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\arrow_right_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\bold_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\bold_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\bold_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\bold_blue_square_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\bold_blue_square_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\bold_blue_square_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_copy_lined_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_copy_lined_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_copy_lined_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_copy_unlined_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_copy_unlined_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_copy_unlined_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_cut_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_cut_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_cut_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_paste_lined_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_paste_lined_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_paste_lined_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_paste_unlined_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_paste_unlined_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\clipboard_paste_unlined_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\compress_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\compress_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\compress_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\connect_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\connect_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\connect_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_find_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_find_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_find_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_register_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_register_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_register_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_security_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_security_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_security_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_settings_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_settings_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_settings_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_unregister_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_unregister_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\db_unregister_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\decompress_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\decompress_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\decompress_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\decrease_indent_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\decrease_indent_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\decrease_indent_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\delete_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\delete_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\delete_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\delete_column_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\delete_column_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\delete_column_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\delete_row_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\delete_row_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\delete_row_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\disconnect_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\disconnect_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\disconnect_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_close_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_close_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_close_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_new_lined_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_new_lined_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_new_lined_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_new_unlined_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_new_unlined_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_new_unlined_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_open_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_open_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_open_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_lined_round_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_lined_round_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_lined_round_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_lined_square_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_lined_square_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_lined_square_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_unlined_round_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_unlined_round_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_unlined_round_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_unlined_square_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_unlined_square_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_properties_unlined_square_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_refresh_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_refresh_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\document_refresh_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\eject_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\eject_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\eject_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\fast_forward_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\fast_forward_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\fast_forward_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\favourites_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\favourites_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\favourites_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\first_track_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\first_track_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\first_track_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\folders_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\folders_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\folders_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_closed_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_closed_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_closed_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_copy_to_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_copy_to_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_copy_to_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_move_to_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_move_to_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_move_to_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_open_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_open_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_open_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_options_round_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_options_round_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_options_round_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_options_square_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_options_square_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_options_square_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_up_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_up_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\folder_up_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\go_arrow_round_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\go_arrow_round_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\go_arrow_round_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\graphic_bar_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\graphic_bar_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\graphic_bar_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_dark_a_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_dark_a_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_dark_a_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_dark_b_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_dark_b_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_dark_b_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_light_a_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_light_a_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_light_a_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_light_b_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_light_b_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\history_light_b_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\home_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\home_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\home_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\increase_indent_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\increase_indent_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\increase_indent_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\italic_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\italic_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\italic_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\italic_blue_square_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\italic_blue_square_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\italic_blue_square_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\journal_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\journal_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\journal_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\last_track_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\last_track_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\last_track_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\line_spacing_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\line_spacing_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\line_spacing_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\link_to_invoice_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\link_to_invoice_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\link_to_invoice_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\lock_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\lock_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\lock_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_a_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_a_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_a_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_b_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_b_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_b_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_item_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_item_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_item_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_new_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_new_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\mail_new_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\order_incoming_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\order_incoming_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\order_incoming_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\pause_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\pause_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\pause_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\piggy_bank_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\piggy_bank_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\piggy_bank_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\play_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\play_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\play_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\preferences_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\preferences_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\preferences_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\print_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\print_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\print_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\print_preview_lined_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\print_preview_lined_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\print_preview_lined_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\print_preview_unlined_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\print_preview_unlined_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\print_preview_unlined_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\record_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\record_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\record_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\recycle_bin_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\recycle_bin_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\recycle_bin_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\redo_round_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\redo_round_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\redo_round_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\redo_square_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\redo_square_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\redo_square_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\rewind_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\rewind_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\rewind_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\save_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\save_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\save_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\search_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\search_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\search_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\sort_ascending_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\sort_ascending_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\sort_ascending_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\sort_descending_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\sort_descending_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\sort_descending_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\split_column_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\split_column_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\split_column_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\split_row_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\split_row_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\split_row_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\stop_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\stop_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\stop_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\stop_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\stop_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\stop_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\timer_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\timer_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\timer_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\treenode_add_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\treenode_add_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\treenode_add_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\treenode_delete_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\treenode_delete_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\treenode_delete_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\treenode_edit_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\treenode_edit_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\treenode_edit_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\tree_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\tree_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\tree_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\underline_blue_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\underline_blue_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\underline_blue_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\underline_blue_square_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\underline_blue_square_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\underline_blue_square_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\undo_round_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\undo_round_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\undo_round_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\undo_square_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\undo_square_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\undo_square_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\unlock_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\unlock_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\unlock_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\users_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\users_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\users_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\view_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\view_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\view_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\volume_slider_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\volume_slider_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\volume_slider_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\voucher_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\voucher_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\voucher_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\web_search_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\web_search_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\web_search_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\zoom_in_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\zoom_in_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\zoom_in_32_h.bmp" />
+    <Content Include="images\icones\new icon\32x32\zoom_out_32.bmp" />
+    <Content Include="images\icones\new icon\32x32\zoom_out_32_d.bmp" />
+    <Content Include="images\icones\new icon\32x32\zoom_out_32_h.bmp" />
+    <Content Include="images\icones\order-history64.png" />
+    <Content Include="images\icones\ordering64.png" />
+    <Content Include="images\icones\payment-card64.png" />
+    <Content Include="images\icones\Process-Info64.png" />
+    <Content Include="images\icones\purse.png" />
+    <Content Include="images\icones\Rank-History64.png" />
+    <Content Include="images\icones\relatorios 40 x 40.png" />
+    <Content Include="images\icones\relatorios contas a pagar.png" />
+    <Content Include="images\icones\relatorios contas a receber.png" />
+    <Content Include="images\icones\relatorios lançamentos.png" />
+    <Content Include="images\icones\reports64.png" />
+    <Content Include="images\icones\safety_box.png" />
+    <Content Include="images\icones\saida.ico" />
+    <Content Include="images\icones\sair 20x20.png" />
+    <Content Include="images\icones\sair 32x32.png" />
+    <Content Include="images\icones\sair 40 x 35.png" />
+    <Content Include="images\icones\sair 40 x 38.png" />
+    <Content Include="images\icones\sair 50x40.png" />
+    <Content Include="images\icones\sair.png" />
+    <Content Include="images\icones\sales-report64.png" />
+    <Content Include="images\icones\salvar 32x32.png" />
+    <Content Include="images\icones\Search-Globe64.png" />
+    <Content Include="images\icones\Search-Male-User64.png" />
+    <Content Include="images\icones\sign-up64.png" />
+    <Content Include="images\icones\splash.jpg" />
+    <Content Include="images\icones\usuarios 40x40.png" />
+    <Content Include="images\icones\usuarios.png" />
+    <Content Include="images\login escuro.jpg" />
+    <Content Include="images\Relatório.png" />
+    <Content Include="images\vendas.jpg" />
+    <Content Include="images\vendas2.jpg" />
+    <Content Include="images\vendas3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sistema.DAL\sistema.DAL.csproj">
+      <Project>{4896a6c0-aa10-481f-b5a2-eeb987eff9b2}</Project>
+      <Name>sistema.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
