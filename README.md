@@ -4,5 +4,5 @@
     . C# 7.3
     . Microsoft SQL Server 2014
     . visual studio community 2019
-    . Windows 10 Professional 
+    . Windows 10 Pro 
     
